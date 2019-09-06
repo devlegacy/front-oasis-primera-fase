@@ -1,0 +1,18 @@
+$background: #bf0811;
+$color: #fff;
+$height: 66px;
+
+:host {
+  height: $height;
+}
+
+.header {
+  display: flex;
+  height: $height;
+  padding: 0 32px;
+
+  background: $background;
+  color: $color;
+
+  align-items: center;
+}
