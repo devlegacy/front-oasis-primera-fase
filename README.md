@@ -1,27 +1,62 @@
-# FrontOasisPrimeraFase
+# Oasis
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
+## Technical data
 
-## Development server
+```shell
+Angular CLI: 8.3.3
+Node: 10.16.0
+OS: win32 x64
+npm: 6.11.3
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Install
 
-## Code scaffolding
+```bash
+  # Prefer install
+  npm install -g @angular/cli
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  # Clone repository
+  git clone https://github.com/devlegacy/front-oasis-primera-fase.git
 
-## Build
+  # change directory to front-oasis-primera-fase
+  cd ./front-oasis-primera-fase
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+  # Install dependencies
+  npm i
+```
 
-## Running unit tests
+## Run project
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+  # Run
+  ng serve -o
+  # Prefer url: http://localhost:4000
+```
 
-## Running end-to-end tests
+## Example
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![Example](./Captura.JPG)
 
-## Further help
+## Notes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Variables de entorno.
+
+API_URL: 'http://localhost:8000/api/'
+ASSETS_API_URL: 'https://api-onow.oasishoteles.net/'
+
+En caso de cambiar alguna, modificar el archivo:
+
++&nbsp;:open_file_folder: `project-name`
+
+&nbsp;|&nbsp;&nbsp;+-- :open_file_folder: `src`
+
+&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;+-- :open_file_folder: `enviroments`
+
+&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;--- :page_facing_up: `environment.ts`
+
+## TODO
+
+- Crear componentes independientes para restaurantes, bares y el centro de consumo seleccionado.
+- Solicitar y usar url /api/hotels/1 para usar un servicio y traer información del hotel exclusivamente en el componente de cabecera.
+- Cambiar dinamicamente url para que apunte hotel y al centro de consumo con un slug (/gran-oasis/hacienda-sarape)
+- Mejorar archivos y funciones SCSS.

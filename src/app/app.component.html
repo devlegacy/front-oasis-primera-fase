@@ -35,8 +35,8 @@
   <section class="selected-box">
     <article *ngIf="consumptionDetail">
       {{consumptionDetail.name}}
-
-      <img src="{{ASSETS_API_URL }}{{consumptionDetail.img.coverPage}}" alt="">
+      <!-- TODO: Remove this -->
+      <img style="width:100%;" src="{{ASSETS_API_URL }}{{consumptionDetail.img.coverPage}}" alt="">
 
       {{consumptionDetail.name}}
       {{consumptionDetail.concept}}
