@@ -1,7 +1,7 @@
 $background: #bf0811;
 $color: #fff;
 $height: 66px;
-
+$gutter: 16px;
 :host {
   height: $height;
 }
@@ -9,10 +9,33 @@ $height: 66px;
 .header {
   display: flex;
   height: $height;
-  padding: 0 32px;
+  padding: 0 $gutter;
 
   background: $background;
   color: $color;
 
   align-items: center;
+
+  &__hotel-name {
+    padding-right: $gutter;
+    border-right: 1px solid #fff;
+
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__time,
+  &__date {
+    padding-left: $gutter*2;
+  }
+  &__logo-wrapper {
+    display: flex;
+
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+  &__logo {
+    width: 30px;
+  }
 }

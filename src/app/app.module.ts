@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
+import { Time12Pipe } from './shared/pipes/time12.pipe';
+
 
 registerLocaleData(es);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    Time12Pipe,
+
   ],
   imports: [
     BrowserModule,

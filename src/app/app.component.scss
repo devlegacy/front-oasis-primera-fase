@@ -1,0 +1,81 @@
+$gutter: 16px;
+$bg-bar: #343434;
+$fg-bar: #fff;
+
+@mixin section-title($border-color) {
+  padding: 14px 0;
+  border-bottom: 1px solid $border-color;
+  margin: 0;
+  margin-bottom: 14px;
+
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+@mixin consumption-center-name() {
+  margin-bottom: 14px;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+@mixin card($border-color) {
+  padding: 14px 0;
+  border-bottom: 1px solid $border-color;
+}
+
+@mixin card-details() {
+  display: flex;
+  padding-top: 20px;
+
+  justify-content: space-between;
+}
+
+.container {
+  display: flex;
+}
+
+.restaurants,
+.bares,
+.selected-box {
+  width: 100%;
+  padding: $gutter;
+}
+
+.restaurants {
+  &__title {
+    @include section-title($bg-bar);
+  }
+  &__name {
+    @include consumption-center-name();
+  }
+  &__concept {
+    width: 210px;
+
+    color: #b22222;
+
+    font-size: 16px;
+  }
+  .card {
+    @include card($bg-bar);
+    &__details {
+      @include card-details();
+    }
+  }
+}
+.bares {
+  background: $bg-bar;
+  color: $fg-bar;
+
+  &__title {
+    @include section-title($fg-bar);
+  }
+  &__name {
+    @include consumption-center-name();
+  }
+  .card {
+    @include card($fg-bar);
+    &__details {
+      @include card-details();
+    }
+  }
+}
