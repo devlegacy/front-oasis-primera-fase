@@ -1,0 +1,10 @@
+@import '~src/assets/scss/base/normalize';
+@import '~src/assets/scss/base/fonts/fonts';
+@import '~src/assets/scss/base/reset';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+}

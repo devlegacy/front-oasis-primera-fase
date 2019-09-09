@@ -1,6 +1,6 @@
+@import '~src/assets/scss/config';
 $background: #bf0811;
 $color: #fff;
-$height: 66px;
 $gutter: 16px;
 :host {
   height: $height;
@@ -8,7 +8,7 @@ $gutter: 16px;
 
 .header {
   display: flex;
-  height: $height;
+  height: $header-size;
   padding: 0 $gutter;
 
   background: $background;
