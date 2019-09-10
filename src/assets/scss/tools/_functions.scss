@@ -1,0 +1,48 @@
+/// Fetch nested keys
+///
+/// @param {Map} $map - Map
+/// @param {Arglist} $keys - Keys to fetch
+///
+/// @return {*}
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+    @if type-of($map) != 'map' {
+      @warn '`#{$map}` is not a map.';
+      @return false;
+    }
+  }
+
+  @return $map;
+}
+
+/// Checks if a list contains a value(s).
+///
+/// @param {List} $list - The list to check against.
+/// @param {List} $values - A single value or list of values to check for.
+///
+/// @example
+///   contains($list, $value)
+///
+/// @return {Bool}
+@function contains($list, $values...) {
+  @each $value in $values {
+    @if type-of(index($list, $value)) != 'number' {
+      @return false;
+    }
+  }
+
+  @return true;
+}
+
+@mixin font($group, $variant: regular, $properties: family weight style, $font-stack: $base-font-stack) {
+  $font-properties: map-deep-get($font-stack, $group, $variant);
+
+  @if $font-properties {
+    @each $property, $values in $font-properties {
+      @if contains($properties, $property) {
+        font-#{$property}: map-get($font-properties, $property);
+      }
+    }
+  }
+}

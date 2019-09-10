@@ -1,1 +1,29 @@
+@import '~src/assets/scss/tools/functions';
+
+// Colors
+// Named by: http://chir.ag/projects/name-that-color/
+$white: #fff;
+$milano-red: #bf0811;
+//
 $header-size: 66px;
+$header-background: $milano-red;
+$gutter: 16px;
+$base-font-stack: (
+  open-sans: (
+    light: (
+      family: ('Open Sans', sans-serif),
+      weight: 200,
+      style: normal,
+    ),
+    regular: (
+      family: ('Open Sans', sans-serif),
+      weight: 400,
+      style: normal,
+    ),
+    bold: (
+      family: ('Open Sans', sans-serif),
+      weight: 700,
+      style: normal,
+    ),
+  ),
+);

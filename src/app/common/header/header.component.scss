@@ -1,9 +1,7 @@
 @import '~src/assets/scss/config';
-$background: #bf0811;
-$color: #fff;
-$gutter: 16px;
+
 :host {
-  height: $height;
+  height: $header-size;
 }
 
 .header {
@@ -11,23 +9,28 @@ $gutter: 16px;
   height: $header-size;
   padding: 0 $gutter;
 
-  background: $background;
-  color: $color;
+  background: $header-background;
+  color: $white;
 
   align-items: center;
 
   &__hotel-name {
-    padding-right: $gutter;
-    border-right: 1px solid #fff;
+    @include font(open-sans, bold, weight);
 
-    font-weight: 700;
+    padding-right: $gutter;
+    border-right: 1px solid $white;
+
     text-transform: uppercase;
   }
 
-  &__time,
-  &__date {
+  &__time {
     padding-left: $gutter*2;
   }
+
+  &__date {
+    padding-left: $gutter;
+  }
+
   &__logo-wrapper {
     display: flex;
 
@@ -35,6 +38,7 @@ $gutter: 16px;
     flex-grow: 1;
     justify-content: flex-end;
   }
+
   &__logo {
     width: 30px;
   }
