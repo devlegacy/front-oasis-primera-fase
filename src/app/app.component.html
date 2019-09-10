@@ -1,37 +1,7 @@
 <app-header></app-header>
 <section class="container">
-  <section class="restaurants" *ngIf="restaurants">
-    <h1 class="restaurants__title">RESTAURANTES</h1>
-    <article class="card" *ngFor="let restaurant of restaurants">
-      <div class="restaurants__name">{{restaurant.name}}</div>
-      <div class="restaurants__concept">{{restaurant.concept}}</div>
-      <div class="card__details">
-        <div class="card__schedule">
-          <p class="restaurants__name">ABIERTO HOY</p>
-          {{restaurant.schedules[0].start | time12}} - {{restaurant.schedules[0].end | time12}}
-        </div>
-        <div class="card__actions">
-          <button (click)="getDetails(restaurant.href.details)">Ver más</button>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <section class="bares" *ngIf="bares">
-    <h1 class="bares__title">BARES</h1>
-    <article class="card" *ngFor="let bar of bares">
-      <div class="bares__name">{{bar.name}}</div>
-      <div class="card__details">
-        <div class="card__schedule">
-          <p class="restaurants__name">ABIERTO HOY</p>
-          {{bar.schedules[0].start | time12}} - {{bar.schedules[0].end | time12}}
-        </div>
-        <div class="card__actions">
-          <button (click)="getDetails(bar.href.details)">Ver más</button>
-        </div>
-      </div>
-    </article>
-  </section>
+  <app-consumption-center [consumptionCenters]="restaurants" title="Restaurantes" theme="light"></app-consumption-center>
+  <app-consumption-center [consumptionCenters]="bares" title="Bares" theme="dark"></app-consumption-center>
   <section class="selected-box">
     <article *ngIf="consumptionDetail">
       {{consumptionDetail.name}}
@@ -44,8 +14,6 @@
       ABIERTO HOY
     </article>
   </section>
-
-
 </section>
 
 

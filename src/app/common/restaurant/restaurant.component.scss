@@ -1,0 +1,76 @@
+@import '~src/assets/scss/config';
+
+:host {
+  width: 100%;
+}
+
+.card {
+  padding: 14px 0;
+  border-bottom: 1px solid $black;
+  &__details {
+    display: flex;
+    padding-top: 20px;
+
+    justify-content: space-between;
+  }
+}
+
+.button {
+  width: 144px;
+  height: 44px;
+  border: 1px solid $black;
+  border-radius: 5px;
+
+  background: $white;
+
+  font-size: 18px;
+  font-weight: 600;
+  // text-transform: uppercase;
+
+  outline: none;
+}
+
+.button:hover {
+  background: invert($white);
+  color: invert($black);
+}
+
+.button:active {
+  box-shadow: 0 0 2px $black inset;
+
+  background: invert($black);
+  color: invert($white);
+}
+
+.restaurants {
+  width: 100%;
+  padding: $gutter $gutter*1.5;
+
+  &__header-title {
+    @include font(open-sans, bold, weight);
+
+    padding: 14px 0;
+    border-bottom: 1px solid $black;
+    margin: 0;
+    margin-bottom: 14px;
+
+    font-size: 22px;
+    text-align: center;
+  }
+
+  &__title {
+    @include font(open-sans, bold, weight);
+
+    margin-bottom: 14px;
+
+    font-size: 18px;
+  }
+
+  &__concept {
+    @include font(open-sans, regular, weight);
+
+    width: 210px;
+
+    color: $mexican-red;
+  }
+}

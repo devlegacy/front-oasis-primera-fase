@@ -1,0 +1,16 @@
+<section class="restaurants" *ngIf="restaurants">
+  <h1 class="restaurants__header-title">{{'Restaurantes' | uppercase}}</h1>
+  <article class="card" *ngFor="let restaurant of restaurants">
+    <div class="restaurants__title">{{restaurant.name}}</div>
+    <div class="restaurants__concept">{{restaurant.concept}}</div>
+    <div class="card__details">
+      <div class="card__schedule">
+        <p class="restaurants__title">{{'Abierto hoy' | uppercase}}</p>
+        <p>{{restaurant.schedules[0].start | time12}} - {{restaurant.schedules[0].end | time12}}</p>
+      </div>
+      <div class="card__actions">
+        <button class="button" (click)="getDetails(restaurant.href.details)">{{'Ver más' | uppercase}}</button>
+      </div>
+    </div>
+  </article>
+</section>

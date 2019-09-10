@@ -3,6 +3,7 @@ import { RestaurantService } from './shared/services/restaurant.service';
 import { BarService } from './shared/services/bar.service';
 import { ConsumptionCenterService } from './shared/services/consumption-center.service';
 import { environment } from 'src/environments/environment';
+import { ConsumptionCenter } from './shared/models/consumption-center';
 
 @Component({
   selector: 'app-root',
@@ -11,10 +12,11 @@ import { environment } from 'src/environments/environment';
 })
 export class AppComponent implements OnInit {
   ASSETS_API_URL = environment.ASSETS_API_URL;
-  hotel;
-  restaurants;
-  bares;
-  consumptionDetail;
+
+  restaurants: Array<ConsumptionCenter>;
+  bares: Array<ConsumptionCenter>;
+  consumptionDetail: ConsumptionCenter;
+
   constructor(public _consumptionCenterService: ConsumptionCenterService) { }
 
   ngOnInit() {
@@ -25,7 +27,6 @@ export class AppComponent implements OnInit {
   getAllRestaurants() {
     this._consumptionCenterService.getAllRestaurants().subscribe(
       (response) => {
-        this.hotel = response.data.hotel;
         this.restaurants = response.data.consumptionCenter;
 
         if (this.restaurants) {
@@ -34,7 +35,7 @@ export class AppComponent implements OnInit {
       },
       err => { },
       () => {
-        console.info('Finish load data');
+        console.info('Finish load restaurant data');
       }
     );
   }
@@ -46,7 +47,7 @@ export class AppComponent implements OnInit {
       },
       err => { },
       () => {
-        console.info('Finish load data');
+        console.info('Finish load bares data');
       }
     );
   }
@@ -59,7 +60,7 @@ export class AppComponent implements OnInit {
       },
       err => { },
       () => {
-        console.info('Finish load data');
+        console.info('Finish load restaurant/bar data');
       }
     );
   }
