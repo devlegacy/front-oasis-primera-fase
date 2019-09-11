@@ -1,89 +1,7 @@
 @import '~src/assets/scss/config';
 
-:host-context( .light-theme ) {
-  background-color: $white;
-  color: $black;
-  .button {
-    border: 1px solid $black;
-
-    background: $white;
-
-    &:hover {
-      background: invert($white);
-      color: invert($black);
-    }
-
-    &:active {
-      box-shadow: 0 0 2px $black inset;
-
-      background: invert($black);
-      color: invert($white);
-    }
-  }
-  .card {
-    border-bottom: 1px solid $black;
-  }
-  .consumption-center {
-    &__header {
-      border-bottom: 1px solid $black;
-    }
-  }
-}
-
-:host-context( .dark-theme ) {
-  background-color: $mine-shaft;
-  color: $white;
-  .button {
-    border: 1px solid invert($black);
-
-    background: $mine-shaft;
-    color: $white;
-    &:hover {
-      background: invert($white);
-      color: invert($black);
-    }
-    &:active {
-      box-shadow: 0 0 2px $black inset;
-
-      background: $mine-shaft;
-      color: $white;
-    }
-  }
-  .card {
-    border-bottom: 1px solid invert($black);
-  }
-  .consumption-center {
-    &__header {
-      border-bottom: 1px solid invert($black);
-    }
-  }
-}
-
 :host {
   width: 100%;
-}
-
-.card {
-  padding: 14px 0;
-
-  &__details {
-    display: flex;
-    padding-top: 20px;
-
-    justify-content: space-between;
-  }
-}
-
-.button {
-  width: 144px;
-  height: 44px;
-  border-radius: 5px;
-
-  font-size: 18px;
-  font-weight: 600;
-  // text-transform: uppercase;
-
-  outline: none;
 }
 
 .consumption-center {
@@ -95,25 +13,34 @@
 
     padding: 14px 0;
     margin: 0;
-    margin-bottom: 14px;
+
+    color: $milano-red;
 
     font-size: 22px;
     text-align: center;
   }
 
+  &__cover-page {
+    box-shadow: 0 0 1px $black;
+    width: 100%;
+  }
+
   &__title {
     @include font(open-sans, bold, weight);
 
-    margin-bottom: 14px;
+    margin-bottom: $gutter *2;
 
     font-size: 18px;
   }
 
   &__concept {
-    @include font(open-sans, regular, weight);
+    width: 240px;
+  }
 
-    width: 210px;
+  &__details {
+    display: flex;
+    padding: 60px 40px;
 
-    color: $mexican-red;
+    justify-content: space-between;
   }
 }

@@ -11,11 +11,9 @@ import { ConsumptionCenter } from './shared/models/consumption-center';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  ASSETS_API_URL = environment.ASSETS_API_URL;
-
   restaurants: Array<ConsumptionCenter>;
   bares: Array<ConsumptionCenter>;
-  consumptionDetail: ConsumptionCenter;
+  consumptionCenter: ConsumptionCenter;
 
   constructor(public _consumptionCenterService: ConsumptionCenterService) { }
 
@@ -53,15 +51,20 @@ export class AppComponent implements OnInit {
   }
 
   getDetails(url: string) {
-    this.consumptionDetail = null;
+    this.consumptionCenter = null;
     this._consumptionCenterService.getDetailsByUrl(url).subscribe(
       (response) => {
-        this.consumptionDetail = response.data;
+        this.consumptionCenter = response.data;
       },
       err => { },
       () => {
         console.info('Finish load restaurant/bar data');
       }
     );
+  }
+
+  onGetConsumptionCenter($event: ConsumptionCenter) {
+    console.log($event);
+    this.consumptionCenter = $event;
   }
 }

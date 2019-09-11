@@ -1,19 +1,10 @@
 <app-header></app-header>
 <section class="container">
-  <app-consumption-center [consumptionCenters]="restaurants" title="Restaurantes" theme="light"></app-consumption-center>
-  <app-consumption-center [consumptionCenters]="bares" title="Bares" theme="dark"></app-consumption-center>
-  <section class="selected-box">
-    <article *ngIf="consumptionDetail">
-      {{consumptionDetail.name}}
-      <!-- TODO: Remove this -->
-      <img style="width:100%;" src="{{ASSETS_API_URL }}{{consumptionDetail.img.coverPage}}" alt="">
-
-      {{consumptionDetail.name}}
-      {{consumptionDetail.concept}}
-
-      ABIERTO HOY
-    </article>
-  </section>
+  <app-consumption-center-list [consumptionCenters]="restaurants" title="Restaurantes" theme="light"
+    (onGetConsumptionCenter)="onGetConsumptionCenter($event)"></app-consumption-center-list>
+  <app-consumption-center-list [consumptionCenters]="bares" title="Bares" theme="dark"
+    (onGetConsumptionCenter)="onGetConsumptionCenter($event)"></app-consumption-center-list>
+  <app-consumption-center [consumptionCenter]="consumptionCenter"></app-consumption-center>
 </section>
 
 

@@ -1,1 +1,16 @@
-<p>consumption-center-list works!</p>
+<section class="consumption-center" *ngIf="consumptionCenters">
+  <h1 class="consumption-center__header">{{ title | uppercase}}</h1>
+  <article class="card" *ngFor="let consumptionCenter of consumptionCenters">
+    <div class="consumption-center__title">{{consumptionCenter.name}}</div>
+    <div class="consumption-center__concept" *ngIf="consumptionCenter.concept">{{consumptionCenter.concept}}</div>
+    <div class="card__details">
+      <div>
+        <p class="consumption-center__title">{{'Abierto hoy' | uppercase}}</p>
+        <p>{{consumptionCenter.schedules[0].start | time12}} - {{consumptionCenter.schedules[0].end | time12}}</p>
+      </div>
+      <div>
+        <button class="button" (click)="getDetails(consumptionCenter.href.details)">{{'Ver más' | uppercase}}</button>
+      </div>
+    </div>
+  </article>
+</section>
