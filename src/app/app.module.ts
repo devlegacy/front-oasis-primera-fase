@@ -12,6 +12,7 @@ import { Time12Pipe } from './shared/pipes/time12.pipe';
 import { RestaurantComponent } from './common/restaurant/restaurant.component';
 import { ConsumptionCenterComponent } from './common/consumption-center/consumption-center.component';
 import { ConsumptionCenterListComponent } from './common/consumption-center-list/consumption-center-list.component';
+import { HomeComponent } from './common/home/home.component';
 
 
 registerLocaleData(es);
@@ -24,6 +25,7 @@ registerLocaleData(es);
     RestaurantComponent,
     ConsumptionCenterComponent,
     ConsumptionCenterListComponent,
+    HomeComponent,
 
   ],
   imports: [

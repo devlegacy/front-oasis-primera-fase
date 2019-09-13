@@ -1,11 +1,3 @@
 <app-header></app-header>
-<section class="container">
-  <app-consumption-center-list [consumptionCenters]="restaurants" title="Restaurantes" theme="light"
-    (onGetConsumptionCenter)="onGetConsumptionCenter($event)"></app-consumption-center-list>
-  <app-consumption-center-list [consumptionCenters]="bares" title="Bares" theme="dark"
-    (onGetConsumptionCenter)="onGetConsumptionCenter($event)"></app-consumption-center-list>
-  <app-consumption-center [consumptionCenter]="consumptionCenter"></app-consumption-center>
-</section>
-
-
 <router-outlet></router-outlet>
+
